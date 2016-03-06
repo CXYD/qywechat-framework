@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/qywechat-framework.iml" filepath="$PROJECT_DIR$/qywechat-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechat-base/wechat-base.iml" filepath="$PROJECT_DIR$/wechat-base/wechat-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechat-qy/wechat-qy.iml" filepath="$PROJECT_DIR$/wechat-qy/wechat-qy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wk-core/wk-core.iml" filepath="$PROJECT_DIR$/wk-core/wk-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wk-webApp/wk-webApp.iml" filepath="$PROJECT_DIR$/wk-webApp/wk-webApp.iml" />
+    </modules>
+  </component>
+</project>

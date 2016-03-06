@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wk.modules.test.dao.TestDao">
+    
+    <sql id="testColumns">
+		a.*
+	</sql>
+	
+	<sql id="testJoins">
+		JOIN sys_office o ON o.id = a.office_id
+    </sql>
+    
+    <select id="get" resultType="Test">
+		SELECT 
+			<include refid="testColumns"/>
+		FROM test a
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="Test">
+		SELECT 
+			<include refid="testColumns"/>
+		FROM test a
+		WHERE a.loginName = #{LOGINNAME}
+		<if test="name != null and name != ''">
+			AND a.name LIKE 
+					<if test="dbName == 'oracle'">'%'||#{name}||'%'</if>
+					<if test="dbName == 'mysql'">CONCAT('%', #{name}, '%')</if>
+		</if>
+		ORDER BY a.id DESC
+	</select>
+	
+	<select id="findAllList" resultType="Test">
+		SELECT 
+			<include refid="testColumns"/>
+		FROM test a
+		WHERE a.name = #{NAME}
+		ORDER BY a.id DESC
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO test(
+			loginname,
+			name
+		) VALUES (
+			#{loginname},
+			#{name}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE test SET
+			name = #{name}, 
+			loginname = #{loginname}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

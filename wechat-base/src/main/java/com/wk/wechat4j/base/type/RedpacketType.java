@@ -1,0 +1,21 @@
+package com.wk.wechat4j.base.type;
+
+/**
+ * 红包类型
+ *
+ * @className RedpacketType
+ * @author jy
+ * @date 2015年6月4日
+ * @since JDK 1.6
+ * @see
+ */
+public enum RedpacketType {
+	/**
+	 * 裂变红包
+	 */
+	GROUP,
+	/**
+	 * 普通红包
+	 */
+	NORMAL;
+}
